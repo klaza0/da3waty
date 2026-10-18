@@ -1,0 +1,3 @@
+-- Templates are seeded from the init migration.
+-- Public demo invitation `/invite/seif-sama` is also available from the app
+-- catalog when the database row does not exist yet.

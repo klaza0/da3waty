@@ -1,0 +1,139 @@
+.sage {
+  --olive: #7d8b68;
+  --olive-deep: #5f6b4d;
+  --cream: #f6f1e8;
+  --ink: #2d2a26;
+  --soft: #6b675f;
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100svh;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.18), transparent 40%),
+    #7d8b68;
+  padding: 22px 16px 28px;
+  color: var(--ink);
+}
+
+.sage-card {
+  position: relative;
+  min-height: calc(100svh - 50px);
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 18px 18px 0;
+  overflow: hidden;
+}
+
+.sage-seal {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  animation: sage-drop 0.9s ease both;
+}
+
+.sage-kicker {
+  margin: 10px 0 0;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  line-height: 1.55;
+  color: var(--ink);
+  font-family: "Times New Roman", Georgia, serif;
+  text-transform: uppercase;
+}
+
+.sage-names {
+  margin: 18px 0 0;
+  display: grid;
+  gap: 2px;
+  justify-items: center;
+}
+
+.sage-names .invite-name,
+.sage .invite-name {
+  font-size: clamp(42px, 12vw, 56px);
+  line-height: 1;
+  color: #1c1a18 !important;
+}
+
+.sage-heart {
+  width: 18px;
+  height: 16px;
+  background: var(--olive);
+  transform: rotate(-45deg);
+  margin: 6px 0 8px;
+  position: relative;
+  animation: sage-pulse 1.8s ease-in-out infinite;
+}
+
+.sage-heart::before,
+.sage-heart::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 16px;
+  background: var(--olive);
+  border-radius: 50%;
+}
+
+.sage-heart::before {
+  top: -8px;
+  left: 0;
+}
+
+.sage-heart::after {
+  left: 8px;
+  top: 0;
+}
+
+.sage-date {
+  margin: 8px 0 0;
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  font-family: Georgia, serif;
+}
+
+.sage-time {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--soft);
+  font-family: Georgia, serif;
+}
+
+.sage-art {
+  width: 118%;
+  max-width: none;
+  margin-top: auto;
+  mix-blend-mode: multiply;
+  animation: sage-rise 1.1s ease 0.2s both;
+}
+
+.sage-body {
+  padding: 16px 4px 60px;
+  display: grid;
+  gap: 12px;
+}
+
+.sage-extra {
+  background: var(--cream);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+@keyframes sage-drop {
+  from { transform: translateY(-16px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes sage-rise {
+  from { transform: translateY(24px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes sage-pulse {
+  0%, 100% { transform: rotate(-45deg) scale(1); }
+  50% { transform: rotate(-45deg) scale(1.08); }
+}

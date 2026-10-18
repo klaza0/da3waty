@@ -1,26 +1,119 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ivory: #f7f1e8;
+  --cream: #fbf8f3;
+  --ink: #2c2416;
+  --muted: #7a6f62;
+  --rose: #9c4b5c;
+  --rose-deep: #7d3b4a;
+  --gold: #c4a574;
+  --gold-deep: #b08d55;
+  --line: #e6dccf;
+  --card: #fffcf8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ivory: var(--ivory);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-rose: var(--rose);
+  --color-rose-deep: var(--rose-deep);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --font-sans: var(--font-cairo);
+  --font-display: var(--font-amiri);
+  --shadow-soft: 0 18px 50px rgba(44, 36, 22, 0.08);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-cairo), sans-serif;
 }
+
+::selection {
+  background: color-mix(in srgb, var(--gold) 40%, white);
+}
+
+.font-display {
+  font-family: var(--font-amiri), serif;
+}
+
+[data-name-font="great-vibes"] .invite-name {
+  font-family: var(--font-great-vibes), var(--font-amiri), cursive;
+}
+[data-name-font="pinyon"] .invite-name {
+  font-family: var(--font-pinyon), var(--font-amiri), cursive;
+}
+[data-name-font="playfair"] .invite-name {
+  font-family: var(--font-playfair), var(--font-amiri), serif;
+}
+[data-name-font="georgia"] .invite-name {
+  font-family: Georgia, var(--font-amiri), serif;
+}
+[data-name-font="didot"] .invite-name {
+  font-family: Didot, "Bodoni MT", var(--font-amiri), serif;
+}
+[data-name-font="outfit"] .invite-name {
+  font-family: var(--font-outfit), var(--font-cairo), sans-serif;
+}
+[data-name-font="noto-arabic"] .invite-name {
+  font-family: var(--font-noto-naskh), var(--font-amiri), serif;
+}
+[data-name-font="amiri"] .invite-name {
+  font-family: var(--font-amiri), serif;
+}
+[data-name-font="cairo"] .invite-name {
+  font-family: var(--font-cairo), sans-serif;
+}
+[data-name-font="reem-kufi"] .invite-name {
+  font-family: var(--font-reem-kufi), sans-serif;
+}
+[data-name-font="tajawal"] .invite-name {
+  font-family: var(--font-tajawal), sans-serif;
+}
+
+.invite-name {
+  color: var(--invite-name-color, var(--gold));
+}
+.invite-title {
+  color: var(--invite-title-color, var(--gold));
+}
+
+[data-calligraphy="off"] .invite-title,
+[data-calligraphy="off"] .font-display {
+  font-family: var(--font-cairo), sans-serif;
+}
+
+.ornament-line {
+  height: 1px;
+  background: linear-gradient(to left, transparent, var(--gold), transparent);
+}
+
+.phone-frame {
+  border-radius: 2.4rem;
+  border: 8px solid #1f1a14;
+  box-shadow: 0 30px 80px rgba(44, 36, 22, 0.18);
+  background: #1f1a14;
+}
+
+.phone-frame::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88px;
+  height: 16px;
+  border-radius: 999px;
+  background: #111;
+}
+
