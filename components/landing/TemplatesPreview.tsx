@@ -16,7 +16,7 @@ export async function TemplatesPreview() {
       <p className="text-sm tracking-[0.25em] text-gold-deep">التصميمات</p>
       <h2 className="mt-3 font-display text-3xl">اختار التصميم اللي يشبهك</h2>
       <div className="mt-6 flex flex-wrap gap-2 text-sm text-muted">
-        {EVENT_TYPES.filter((item) => item.value !== "other").map((item) => (
+        {EVENT_TYPES.map((item) => (
           <span key={item.value} className="rounded-full border border-line bg-white px-3 py-1">
             {item.label}
           </span>
